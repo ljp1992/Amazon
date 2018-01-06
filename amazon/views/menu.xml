@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem name="亚马逊" id="amazon_root" sequence="0"/>
+        <menuitem name="产品同步" id="product_sync" parent="amazon_root" sequence="50"/>
+        <menuitem name="店铺" id="amazon_shop_parent" parent="amazon_root" sequence="100"/>
+    </data>
+</odoo>

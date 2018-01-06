@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="amazon_shop_tree">
+            <field name="name">amazon_shop_tree</field>
+            <field name="model">amazon.shop</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="merchant_id"/>
+                    <field name="market_place_id"/>
+                    <field name="encoding"/>
+                    <field name="country_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="amazon_shop_form" model="ir.ui.view">
+            <field name="name">amazon_shop_form</field>
+            <field name="model">amazon.shop</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <header>
+                        <button name="get_all_product" type="object" string="获取店铺所有产品" class="oe_highlight"/>
+                        <button name="get_asin_info_cs" type="object" string="获取asin info" class="oe_highlight"/>
+                        <!--<field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,open,paid"/>-->
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="merchant_id"/>
+                                <field name="market_place_id"/>
+                                <field name="encoding"/>
+                                <field name="country_id"/>
+                                <field name="access_key"/>
+                                <field name="secret_key"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="amazon_shop_act" model="ir.actions.act_window">
+            <field name="name">店铺</field>
+            <field name="res_model">amazon.shop</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!--<field name="search_view_id" ref="amazon_shop_search"/>-->
+        </record>
+
+        <menuitem name="店铺" id="amazon_shop_menu" parent="amazon_shop_parent" action="amazon_shop_act"/>
+  </data>
+</odoo>
